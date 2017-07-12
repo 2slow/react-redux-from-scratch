@@ -21,19 +21,25 @@ module.exports = {
         path:  __dirname + "/dist",
         filename: 'main.[hash].js'
     },
+    resolve: {
+        alias      : {
+            'utils': path.resolve(__dirname, 'src/utils/'),
+            'constants': path.resolve(__dirname, 'src/constants/'),
+            'services': path.resolve(__dirname, 'src/services/'),
+            'actions': path.resolve(__dirname, 'src/actions/'),
+            'components': path.resolve(__dirname, 'src/components/'),
+            'containers': path.resolve(__dirname, 'src/containers/'),
+            'routes': path.resolve(__dirname, 'src/routes/')
+        }
+    },
     module: {
         rules: [{
             test: /.jsx?$/,
             loader: 'babel-loader',
             include: path.join(__dirname, 'src'),
             query: {
-                plugins: ['transform-runtime', 'transform-react-jsx'],
-                presets: [["env", {
-                    "targets": {
-                        "chrome": 35,
-                        "browsers": [">1%"]
-                    }
-                }]]
+                plugins: ['transform-runtime', 'transform-react-jsx', 'transform-object-rest-spread'],
+                presets: [["env", {}]]
             }
         }, {
             test: /\.less$/,

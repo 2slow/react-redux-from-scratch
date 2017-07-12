@@ -1,4 +1,5 @@
 import React, { Component, PropTypes} from 'react';
+import {MainContent, Navbar} from "components";
 
 class App extends Component {
     constructor (props, context) {
@@ -18,7 +19,8 @@ class App extends Component {
         const {} = this.props;
         return (
             <div className="app">
-                {self.props.children}
+                <Navbar/>
+                <MainContent/>
             </div>
         );
     }

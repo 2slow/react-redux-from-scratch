@@ -2,17 +2,21 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./components/App";
-import MainContent from "./components/MainContent";
-import Navbar from "./components/Navbar";
+import Root from 'containers/Root';
+import {configureStore} from './store/configureStore';
+import PropTypes from 'prop-types';
 
 const target = document.getElementById('root');
+const store = configureStore();
 
-const node = (
-    <App>
-        <Navbar/>
-        <MainContent/>
-    </App>
+
+
+const root = (
+    <Root store={store}/>
 );
 
-ReactDOM.render(node, target);
+Root.propTypes = {
+    store: PropTypes.object.isRequired
+};
+
+ReactDOM.render(root, target);

@@ -1,0 +1,3 @@
+module.exports = {
+    APPLICATION_SWITCH_LOCALE: 'application/APPLICATION_SWITCH_LOCALE'
+}
