@@ -29,7 +29,8 @@ module.exports = {
             'actions': path.resolve(__dirname, 'src/actions/'),
             'components': path.resolve(__dirname, 'src/components/'),
             'containers': path.resolve(__dirname, 'src/containers/'),
-            'routes': path.resolve(__dirname, 'src/routes/')
+            'routes': path.resolve(__dirname, 'src/routes/'),
+            'layouts': path.resolve(__dirname, 'src/layouts/')
         }
     },
     module: {

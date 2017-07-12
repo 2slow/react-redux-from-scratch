@@ -2,53 +2,45 @@ import {createReducer} from 'utils';
 import rc from 'constants/redux-constants';
 
 const initialState = {
-    user: {
+    current: {
         data: null,
         error: null,
         loading: false
-    },
-    counter: 0
+    }
 };
 
 
 export default createReducer(initialState, {
 
-    [rc.APPLICATION_USER_LOAD]: (state, action) => {
+    [rc.USER_LOAD]: (state, action) => {
         return {
             ...state,
-            user: {
-                ...state.user,
+            current: {
+                ...state.current,
                 loading: true
             }
         }
     },
 
-    [rc.APPLICATION_USER_LOAD_SUCCESS]: (state, action) => {
+    [rc.USER_LOAD_SUCCESS]: (state, action) => {
         return {
             ...state,
-            user: {
-                ...state.user,
+            current: {
+                ...state.current,
                 data: action.result,
                 loading: false
             }
         }
     },
 
-    [rc.APPLICATION_USER_LOAD_FAIL]: (state, action) => {
+    [rc.USER_LOAD_FAIL]: (state, action) => {
         return {
             ...state,
-            user: {
-                ...state.user,
+            current: {
+                ...state.current,
                 error: true,
                 loading: false
             }
         }
     },
-
-    [rc.APPLICATION_COUNTER_ADD]: (state, action) => {
-        return {
-            ...state,
-            counter: state.counter + 1
-        }
-    }
 });

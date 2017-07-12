@@ -1,5 +1,14 @@
 import React, { Component, PropTypes} from 'react';
 import {MainContent, Navbar} from "components";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+const mapStateToProps = function (state) {
+    return {
+    };
+};
+const mapDispatchToProps = (dispatch) => ({
+});
 
 class App extends Component {
     constructor (props, context) {
@@ -15,15 +24,16 @@ class App extends Component {
 
 
     render () {
-        var self = this;
-        const {} = this.props;
+        console.log('this.props', this.props)
         return (
             <div className="app">
                 <Navbar/>
-                <MainContent/>
+                <h2>Well done</h2>
+                <p>Here is your React / Redux / Webpack App!</p>
+                {this.props.children}
             </div>
         );
     }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

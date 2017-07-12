@@ -1,4 +1,6 @@
 import rootReducer from '../reducers';
+import thunk from 'redux-thunk';
+import {asyncRequest} from '../middlewares/asyncRequest';
 import {
     applyMiddleware,
     compose,
@@ -6,11 +8,10 @@ import {
 } from 'redux';
 
 export function configureStore () {
-    const middleware = [];
+    const middleware = [thunk, asyncRequest];
 
-    let createStoreWithMiddleware = compose(
+    return createStore(
+        rootReducer,
         applyMiddleware(...middleware)
-    )(createStore);
-
-    return createStoreWithMiddleware(rootReducer, {});
+    );
 }
