@@ -12,7 +12,7 @@ cd react-from-scratch
 npm install
 ```
 
-## Then use it with one more
+## Then use it with the following commands
 
 Run the dev server:
 
@@ -21,6 +21,7 @@ npm run dev
 ```
 
 And open the url localhost:3006.
+
 
 
 Build project (in dist directory by default):
