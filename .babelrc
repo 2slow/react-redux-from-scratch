@@ -1,1 +1,17 @@
-{}
+{
+    "env": {
+        "development": {
+            plugins: ["react-hot-loader/babel", "transform-object-rest-spread"],
+            presets: ["react", ["env", { "modules": false }]]
+        },
+        "production": {
+            plugins: ["react-hot-loader/babel", "transform-object-rest-spread"],
+            presets: ["react", ["env", { "modules": false }]]
+        },
+        "test": {
+            plugins: ["react-hot-loader/babel", "transform-object-rest-spread"],
+            presets: ["react", ["env"]]
+        }
+    }
+
+}

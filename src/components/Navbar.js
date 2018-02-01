@@ -1,32 +1,30 @@
 import React, { Component} from 'react';
-import {Link} from 'react-router';
-import {withRouter} from 'react-router';
-class Navbar extends Component {
-    constructor (props, context) {
-        super(props, context);
-    }
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+class Navbar extends Component {
     componentWillMount () {
-        const styles = require('./less/Navbar.less');
     }
 
     componentWillReceiveProps (nextProps) {
     }
 
-
     render () {
-        var self = this;
-        const {} = this.props;
         return (
             <div className="navbar">
                 <div className="pull-right">
-                    <Link to="/counter" activeClassName="active">Counter</Link>
-                    <Link to="/user" activeClassName="active">User</Link>
+                    <Link to="/counter">Counter</Link>
+                    <Link to="/user">User</Link>
                 </div>
-                <h1>React / Redux from scratch</h1>
+                <h1>React / Redux from scratch!</h1>
             </div>
         );
     }
 }
 
-export default withRouter(Navbar);
+Navbar.propTypes = {
+    user: PropTypes.object,
+    userActions: PropTypes.object
+};
+
+export default Navbar;

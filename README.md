@@ -1,5 +1,5 @@
 # react-redux-from-scratch
-A basic running example of React with Redux architecture (including async actions) Babel 6, Webpack 3 and Less
+A basic running example of React with Redux architecture (including async actions) Babel 6, Webpack 3, React router 4, and reducers tests.
 
 
 ## Installation
@@ -17,14 +17,26 @@ npm install
 Run the dev server:
 
 ```
-npm start
+npm run dev
 ```
 
-And open the url localhost:3006 (because :8080 is too mainstream).
+And open the url localhost:3006.
 
 
 Build project (in dist directory by default):
 
 ```
-npm run build
+npm run compile
+```
+
+Run the tests:
+
+```
+npm run test
+```
+
+You can also automatically run tests on file modification:
+
+```
+npm run test:watch
 ```

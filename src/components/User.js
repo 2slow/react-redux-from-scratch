@@ -1,8 +1,9 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
-import * as userActions from 'actions/userActions';
 import { bindActionCreators } from 'redux';
+import * as userActions from 'actions/userActions';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state) {
     return {
@@ -14,12 +15,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class User extends Component {
-    constructor (props, context) {
-        super(props, context);
-    }
-
     componentWillMount () {
-        const styles = require('./less/User.less');
+        require('./less/User.less');
     }
 
     componentWillReceiveProps (nextProps) {
@@ -28,6 +25,7 @@ class User extends Component {
     render () {
         var self = this;
         const {user, userActions} = this.props;
+
         return (
             <div className="user">
                 <p>
@@ -47,4 +45,4 @@ User.propTypes = {
     userActions: PropTypes.object
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(User);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(User));

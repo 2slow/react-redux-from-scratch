@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import * as applicationActions from 'actions/applicationActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state) {
     return {
@@ -14,17 +15,11 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class Counter extends Component {
-    constructor (props, context) {
-        super(props, context);
-    }
-
     componentWillMount () {
-        const styles = require('./less/Counter.less');
     }
 
     componentWillReceiveProps (nextProps) {
     }
-
 
     render () {
         var self = this;
@@ -43,4 +38,4 @@ Counter.propTypes = {
     applicationActions: PropTypes.object
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Counter));

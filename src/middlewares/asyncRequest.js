@@ -1,5 +1,3 @@
-import rc from 'constants/redux-constants';
-
 export const asyncRequest = ({dispatch, getState}) => next => action => {
     if (typeof action === 'function') {
         action = action(dispatch, getState);
@@ -18,7 +16,7 @@ export const asyncRequest = ({dispatch, getState}) => next => action => {
         (error) => {
             next({...rest, error, type: FAILURE});
         }
-    ).catch((error)=> {
+    ).catch((error) => {
         next({...rest, error, params: params || null, type: FAILURE});
     });
 };

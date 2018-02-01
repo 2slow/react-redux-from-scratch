@@ -1,10 +1,12 @@
-export default class UserService{
+export default class UserService {
     static loadUser () {
         return new Promise((resolve) => {
-            //Replace it with some API call
+            // Replace it with some API call
             setTimeout(() => {
                 resolve({
-                    name: 'Jean Valjean'
+                    id: 1,
+                    name: 'Jean Valjean',
+                    email: 'jean.valjean@gmail.com'
                 });
             }, 2000)
         });

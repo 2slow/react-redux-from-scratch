@@ -1,6 +1,6 @@
 import rc from 'constants/redux-constants';
 import Services from 'services'
-//Async action
+// Async action
 export function loadUser (locale, forceLocale) {
     return (dispatch, getState) => {
         return dispatch({

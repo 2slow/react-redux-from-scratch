@@ -5,10 +5,11 @@ const initialState = {
     current: {
         data: null,
         error: null,
-        loading: false
+        loading: false,
+        lastFetched: null,
+        didInvalidate: false
     }
 };
-
 
 export default createReducer(initialState, {
 
@@ -28,6 +29,7 @@ export default createReducer(initialState, {
             current: {
                 ...state.current,
                 data: action.result,
+                lastFetched: new Date().getTime(),
                 loading: false
             }
         }
@@ -42,5 +44,5 @@ export default createReducer(initialState, {
                 loading: false
             }
         }
-    },
+    }
 });
